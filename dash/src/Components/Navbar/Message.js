@@ -4,13 +4,15 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import SettingsIcon from '@material-ui/icons/Settings';
 import {ListItemIcon} from '@material-ui/core';
 import { ListItemText } from '@material-ui/core';
+import MessageIcon from '@material-ui/icons/Message';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import {useState} from "react";
-import image from "../Navbar/profilepic.jpg";
 import {useStyles} from "../Navbar/HeaderStyles";
+import image from "../Navbar/profilepic.jpg";
 
 
-export default function Profile () {
+
+export default function Message () {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = useState(null);
     const handleClick = (event) => {
@@ -22,24 +24,25 @@ export default function Profile () {
       };
 
       const dropDownMenu = [
-          {label:"Settings", icon:<SettingsIcon/>},
-          {label:"Exit", icon:<ExitToAppIcon/>},
-          {label:"settings", icon:<SettingsIcon/>}
+          {label:"Ashim", desc:"Ashim liked your feed"},
+          {label:"Joey", desc:"Joey liked your picture"},
+          {label:"Haley", desc:"Hailey liked your feed"},
+          {label:"Alt", desc:"Alt invited you to like his page"},
+          {label:"Sammy", desc:"Sammy is participating in GSoC"}
       ]
 
       return ( 
         <Box>
-        <Button 
+        <IconButton 
         aria-controls="simple-menu" 
         aria-haspopup="true" 
         onClick={handleClick}
         color="inherit"
-        startIcon={<Avatar src={image} className={classes.navAvatar}></Avatar>}
         >
-        {/* <Badge >
-        <NotificationsIcon />
-        </Badge> */}
-       </Button>
+        <Badge badgeContent={4} color="secondary">
+       <MessageIcon/>
+       </Badge>
+       </IconButton>
        <Menu
        id="simple-menu"
        anchorEl={anchorEl}
@@ -49,8 +52,10 @@ export default function Profile () {
        >
         {dropDownMenu.map((item,i) => 
             <MenuItem component={ListItem} onClick={handleClose}>
-                <ListItemIcon>{item.icon}</ListItemIcon>
-                <ListItemText>{item.label}</ListItemText>
+                <ListItemIcon>
+                    <Avatar className={classes.ulAvatar}>{item.label[0].toUpperCase()}</Avatar>
+                </ListItemIcon>
+                <ListItemText primary={item.label} secondary={item.desc}></ListItemText>
             </MenuItem>
             
        )}
