@@ -6,10 +6,12 @@ import LinkIcon from '@material-ui/icons/Link';
 import DashboardIcon from '@material-ui/icons/Dashboard';
 import BookIcon from '@material-ui/icons/Book';
 import React from "react";
+import { useStyles } from "../Navbar/HeaderStyles";
 import { NavLink } from "react-router-dom";
 
 export default function SideBarData()
 {
+   const classes = useStyles();
    const SideData = [ 
        {label:"Dashboard" ,link:"/" , icon:<DashboardIcon/>},
        {label:"Blog Post" ,link:"/blog", icon:<BookIcon/>},
@@ -22,7 +24,7 @@ export default function SideBarData()
 
         <List>
                 {SideData.map((item,i) =>(
-                <ListItem key={i} component={NavLink} to={item.link}>
+                <ListItem key={i} component={NavLink} to={item.link} classNamwe={classes.navlinks} activeClassName={classes.activeNavLnks}>
                 <ListItemIcon>{item.icon}</ListItemIcon>
                 <ListItemText>{item.label}</ListItemText>
                 </ListItem>

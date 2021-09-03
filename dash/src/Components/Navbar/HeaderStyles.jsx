@@ -1,5 +1,7 @@
 import React from "react";
 import {makeStyles} from '@material-ui/core';
+import { blue } from "@material-ui/core/colors";
+import { blueGrey } from "@material-ui/core/colors";
 export const useStyles = makeStyles((theme)=>({
     toolbar:
     {
@@ -36,6 +38,32 @@ export const useStyles = makeStyles((theme)=>({
   {
       width:"250px",
       marginTop:"65px"
-  }
+  },
+  wrapper:{
+      padding:theme.spacing(2,2,0,32),
+      [theme.breakpoints.down("sm")]: {
+          padding:theme.spacing(2,2),
+      },
+    },
+
+  navlinks:
+  {
+      color:blueGrey["A400"],
+      "&:hover , &:hover div" : {
+          color:blue["A400"],
+      },
+      "& div" :
+      {
+          color:blueGrey["A400"]
+      },
+  },
+
+  activeNavLinks:
+  {
+      color:blue["A700"],
+      " & div ": {
+          color:blue["A700"],
+      },
+  },
 
 }))
