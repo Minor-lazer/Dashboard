@@ -44,7 +44,7 @@ export const useStyles = makeStyles((theme)=>({
       [theme.breakpoints.down("sm")]: {
           padding:theme.spacing(2,2),
       },
-    },
+    }, 
 
   navlinks:
   {
@@ -65,5 +65,19 @@ export const useStyles = makeStyles((theme)=>({
           color:blue["A700"],
       },
   },
+
+  ratioButton:{fontsize:"1rem", fontWeight:"bold"},
+
+  displayCardGraph : {
+      position:"absolute",
+      bottom:"0",
+      left:"0",
+      width:"100%",
+      height:"45%"
+  },
+
+  displayCardGraph:{
+      position:"relative",
+  }
 
 }))

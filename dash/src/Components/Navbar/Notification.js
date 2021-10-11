@@ -3,7 +3,7 @@ import {AppBar,Toolbar,Typography,makeStyles,IconButton,Button,Menu,MenuItem,Box
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import SettingsIcon from '@material-ui/icons/Settings';
 import {ListItemIcon} from '@material-ui/core';
-import { ListItemText } from '@material-ui/core';
+import {ListItemText} from '@material-ui/core';
 import ExitToAppIcon from '@material-ui/icons/ExitToApp';
 import {useState} from "react";
 import {useStyles} from "../Navbar/HeaderStyles";
